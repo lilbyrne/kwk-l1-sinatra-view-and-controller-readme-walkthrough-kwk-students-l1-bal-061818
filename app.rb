@@ -1,16 +1,24 @@
-require_relative 'config/environment'
+require 'bundler'
+Bundler.require 
+require_relative 'models/ecogen'
 
 class App < Sinatra::Base
-  get '/reverse' do
-    erb :reverse
-  end
 
-  post '/reverse' do
-    erb :reversed
-  end
+  # configure do
+  #   set :public_folder, 'public'
+  #   set :views, 'app/views'
+  # end
 
-  get '/friends' do
-    # Write your code here!
-
+  get '/' do
+    erb :ecogen
   end
-end
+  
+  get '/ecogen' do 
+    erb :senators
+    @state_name=params[:state]
+  end 
+  
+  post '/results' do 
+    erb :senators
+  end 
+end 
