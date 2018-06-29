@@ -53,7 +53,7 @@ $hash_states = {
 
  $state_array=["AL", "AK", "AR", "AZ", "CA", "CO", "CT", "DE", "FL", "GA", "HI", "ID", "IL", "IN", "IA", "KS", "KY", "LA", "ME", "MD", "MA", "MI", "MN", "MS", "MO", "MT", "NE", "NV", "NH", "NJ", "NM", "NC", "ND", "OH", "OK", "OR", "PA", "RI", "SC", "SD", "TN", "TX", "UT", "VT", "VA", "WA", "WV", "WI", "WY"]
  
-  user_value = @user_value.to_s
+  user_value = user_value.to_s
   
   def your_senators(user_value)
     # user_value = user_value.to_s
