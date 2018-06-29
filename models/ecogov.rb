@@ -55,13 +55,13 @@ $hash_states = {
  
   user_value = user_value.to_s
   
-  def your_senators(user_value)
+  def your_senators user_value
     # user_value = user_value.to_s
     
-    if $state_array.include?(user_value) == true
+    if $state_array.include? user_value == true
      return $hash_states[user_value].to_s
      
-    elseif $state_array.include?(user_value) == false
+    elseif $state_array.include? user_value == false
       "Input Error"
     end 
   end 
