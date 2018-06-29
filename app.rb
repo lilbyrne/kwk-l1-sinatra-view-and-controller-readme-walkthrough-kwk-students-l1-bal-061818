@@ -1,6 +1,6 @@
 require 'bundler'
 Bundler.require 
-require_relative 'models/ecogen'
+require_relative 'models/ecogov'
 
 class App < Sinatra::Base
 
@@ -13,13 +13,11 @@ class App < Sinatra::Base
     erb :ecogov
   end
   
-  get '/ecogov' do 
-   @state_name=params[state]
-    erb :senators
-  end 
   
   post '/results' do 
-    @senators=your_senators(@state_name)
+    answers = params.values
+    @user_value = answers.to_s
+    @senators = your_senators(@user_value)
     erb :senators
   end 
 end 

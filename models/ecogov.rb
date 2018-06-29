@@ -53,13 +53,14 @@ $hash_states = {
 
  $state_array=["AL", "AK", "AR", "AZ", "CA", "CO", "CT", "DE", "FL", "GA", "HI", "ID", "IL", "IN", "IA", "KS", "KY", "LA", "ME", "MD", "MA", "MI", "MN", "MS", "MO", "MT", "NE", "NV", "NH", "NJ", "NM", "NC", "ND", "OH", "OK", "OR", "PA", "RI", "SC", "SD", "TN", "TX", "UT", "VT", "VA", "WA", "WV", "WI", "WY"]
  
-  def your_senators(state)
-    # $hash_states.each do |state, senator|
-    if $state_array.include? state  
-      return $hash_states[state]
-    else 
+  user_value = @user_value.to_s
+  
+  def your_senators(user_value)
+    # user_value = user_value.to_s
+    if $state_array.include?(user_value) == true
+     return $hash_states[user_value].to_s
+    elseif $state_array.include?(user_value) == false
       "Input Error"
-    # end 
     end 
   end 
 
