@@ -10,16 +10,16 @@ class App < Sinatra::Base
   # end
 
   get '/' do
-    erb :ecogen
+    erb :ecogov
   end
   
-  get '/ecogen' do 
-   @state_name=params[:State]
+  get '/ecogov' do 
+   @state_name=params[state]
     erb :senators
   end 
   
   post '/results' do 
-    senators=your_senators(@state_name)
+    @senators=your_senators(@state_name)
     erb :senators
   end 
 end 
