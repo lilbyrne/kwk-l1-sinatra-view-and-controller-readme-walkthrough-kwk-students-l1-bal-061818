@@ -15,7 +15,7 @@ class App < Sinatra::Base
   
   
   post '/results' do 
-    answers = params.values
+    answers = params[:state]
     @user_value = answers.to_s
     @senators = your_senators(@user_value)
     erb :senators
